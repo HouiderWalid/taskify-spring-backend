@@ -1,5 +1,7 @@
 package com.taskify.taskifyspringback.models.entities;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +22,8 @@ public class Role {
 
     @Column(unique = true)
     private String name;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
+    private Set<Permission> permissions;
 }

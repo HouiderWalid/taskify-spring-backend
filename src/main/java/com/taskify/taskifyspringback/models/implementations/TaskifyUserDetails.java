@@ -10,6 +10,10 @@ import java.util.List;
 
 public record TaskifyUserDetails(User user) implements UserDetails {
 
+    public User getUser() {
+        return this.user;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();

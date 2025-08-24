@@ -1,2 +1,0 @@
-ALTER TABLE users
-    ADD CONSTRAINT user_role_fk FOREIGN KEY (role_id) REFERENCES roles (id) ON DELETE SET NULL

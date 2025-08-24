@@ -43,8 +43,6 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(authenticationGuard, UsernamePasswordAuthenticationFilter.class)
                 .build();
-
-
     }
 
     @Bean

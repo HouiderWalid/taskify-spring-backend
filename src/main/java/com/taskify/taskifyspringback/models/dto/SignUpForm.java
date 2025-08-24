@@ -13,6 +13,11 @@ public class SignUpForm {
     @Size(max = 100, message = "the email must have less than 100 characters")
     private String email;
 
+    @NotBlank(message = "full name field is required")
+    @JsonProperty("full_name")
+    @Size(max = 100, message = "the full name must have less than 100 characters")
+    private String fullName;
+
     @JsonProperty("password")
     @NotBlank(message = "password field is required")
     @Size(min = 8, message = "the password must have at least 8 characters")
